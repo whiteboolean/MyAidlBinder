@@ -23,7 +23,7 @@ public class LeoAidlService extends Service {
         return iBinder;
     }
 
-    private IBinder iBinder = new ILeoAidl.Stub() {
+    private final IBinder iBinder = new ILeoAidl.Stub() {
         @Override
         public void addPerson(Person person) throws RemoteException {
             persons.add(person);
