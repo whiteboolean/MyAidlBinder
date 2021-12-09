@@ -10,14 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAidlBinder">
         <activity
+            android:name=".art_dev_chapter2_aidl.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".art_dev_chapter2_aidl.MainActivity2"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MainActivity3"
-            android:process=":MainActivity3"
-            android:exported="true" />
+            android:exported="true"
+            android:process=":MainActivity3" />
         <activity
             android:name=".MainActivity2"
             android:exported="true"
-            android:process=":MainActivity2"
             android:label="@string/title_activity_main2"
+            android:process=":MainActivity2"
             android:theme="@style/Theme.MyAidlBinder.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,11 +39,15 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:process=":MainActivity"
-            android:exported="true">
-        </activity>
-        <service android:name=".art_dev_chapter2.MessengerService"
-            android:process=":remote.messenger.service"/>
+            android:exported="true"
+            android:process=":MainActivity"></activity>
+
+        <service
+            android:name=".art_dev_chapter2.MessengerService"
+            android:process=":remote.messenger.service" />
+        <service
+            android:name=".art_dev_chapter2_aidl.BookManagerService"
+            android:process=":remote" />
     </application>
 
 </manifest>
